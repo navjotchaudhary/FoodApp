@@ -36,11 +36,11 @@
 
 
         </ul>
-          <ul class="form-inline my-2 my-lg-0 navbar-nav mr-auto">
+          <ul class="form-inline my-2 my-lg-0 navbar-nav " >
 
           {% if request.user.is_authenticated %}
 
-                      <li class="nav-item">
+                      <li class="nav-item  navbar-text">
                              <a class= "nav-link active" href="{% url 'accounts:logout' %}">     Hi  {{ user.username }}!
                                   Logout 
                               </a>
