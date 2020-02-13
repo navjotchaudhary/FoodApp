@@ -5,7 +5,7 @@
 {% block body %}
 
 	
-<div style="text-align: center;">
+<div style="text-align: center;margin-left: 35%; margin-top: 19px;">
 <div class="card" style="width: 18rem;text-align: center;">
    <img src="../{{ restaurant.image }}" class="card-img-top" alt="...">
    <div class="card-body">
@@ -17,9 +17,9 @@
 
      {% for r in restaurant.menu.all %} 
 
-     <li class="list-group-item">{{ r }}</li>{% if request.user.is_staff %}
-     <a href=http://127.0.0.1:8000/admin/product/food/{{ r.id }}/change/> EDIT</a>
-
+     <li class="list-group-item">{{ r }}{% if request.user.is_staff %} &nbsp; &nbsp;
+     <a class="stretched-link" style="color:purple" href=http://127.0.0.1:8000/admin/product/food/{{ r.id }}/change/> EDIT</a>
+   </li>
 {% endif %}
 
    {%  endfor %}
