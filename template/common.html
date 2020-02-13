@@ -62,11 +62,11 @@
         </ul>
           <ul class="form-inline my-2 my-lg-0 navbar-nav " >
 
-          {% if request.user.is_authenticated %}
+         {% if request.user.is_authenticated %}
 
                       <li class="nav-item  navbar-text">
-                             <a class= "nav-link active" href="{% url 'accounts:logout' %}">     Hi  {{ user.username }}!
-                                  Logout 
+                           Hi <a class= "nav-link active" href= "{% url 'accounts:profile'  %}"> {{ user.username }}!</a>
+                                  <a class= "nav-link active" href="{% url 'accounts:logout' %}">       Logout 
                               </a>
                             
                             </li>

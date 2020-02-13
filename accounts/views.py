@@ -6,6 +6,10 @@ from django.contrib.auth.forms import UserCreationForm
 from django.contrib import messages
 
 
+from django.contrib.auth.decorators import login_required
+from django.shortcuts import get_object_or_404
+from django.contrib.auth.models import User
+
 
 
 
@@ -42,3 +46,8 @@ def sign_up(request):
     else:
         form = UserCreationForm()
     return render(request, 'accounts/signup.html', {'form': form})
+
+@login_required
+def profile(request):
+    user = get_object_or_404(User, username=request.user)
+    return render(request, 'profile.html', {'profile_user': user})
